@@ -1,0 +1,57 @@
+@import '../../assets/scss/partials/variables';
+@import '../../assets/scss/partials/mixins';
+@import '../../assets/scss/partials/base';
+@import '../../assets/scss/partials/responsiveness';
+
+.footer {
+  padding: 100px 0 60px;
+
+  @include lg-down {
+    padding: 60px 0;
+  }
+
+  @include sm-down {
+    padding: 0;
+  }
+
+  .footer-nav {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 110px;
+    padding: 0;
+
+    @include sm-down {
+      margin-bottom: 50px;
+    }
+
+    .footer-item {
+
+      .footer-logo {
+        margin: 40px 0;
+        height: 24px;
+      }
+
+      .footer-link {
+        color: $dark;
+        text-decoration: none;
+        @include typography(16, 26, 300);
+        letter-spacing: toRem(0.8);
+        margin-bottom: 12px;
+        display: block;
+
+        &:hover {
+          color: $dark-hover;
+        }
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+  color: $dark;
+  @include typography(14, 21, 200)
+}

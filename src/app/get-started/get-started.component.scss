@@ -1,0 +1,57 @@
+@import '../../assets/scss/partials/variables';
+@import '../../assets/scss/partials/mixins';
+@import '../../assets/scss/partials/base';
+@import '../../assets/scss/partials/responsiveness';
+
+/* get-started */
+.get-started {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 3px 6px $surface-light-pressed;
+  background: $text-1;
+  padding: 35px 50px;
+  margin: 130px 0 70px;
+  border-radius: 30px;
+
+  @include md-down {
+    margin: 70px 0;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .btn {
+    align-self: center;
+    outline: 10px solid $surface-light-pressed;
+  }
+
+  .title {
+    @include typography(36, 45, 400);
+    color: $primary;
+    letter-spacing: toRem(0.9);
+    margin-bottom: 18px;
+
+    @include lg-down {
+      @include typography(30, 38, 400);
+    }
+
+    @include md-down {
+      @include typography(24, 32, 400);
+    }
+  }
+
+  p {
+    @include typography(24, 40, 400);
+    color: $dark;
+    letter-spacing: toRem(0.72);
+
+    @include lg-down {
+      @include typography(20, 38, 400);
+    }
+
+    @include md-down {
+      @include typography(18, 26, 400);
+      margin-bottom: 50px;
+    }
+  }
+}

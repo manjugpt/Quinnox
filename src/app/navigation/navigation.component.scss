@@ -1,0 +1,215 @@
+@import '../../assets/scss/partials/variables';
+@import '../../assets/scss/partials/mixins';
+@import '../../assets/scss/partials/base';
+@import '../../assets/scss/partials/responsiveness';
+
+header {
+  background: $primary;
+}
+
+
+/* navigation */
+.navbar {
+  padding: 0;
+  justify-content: space-between;
+
+  @include md-down {
+    padding: 15px 0;
+  }
+
+  .brand-logo {
+    img {
+      height: toRem(25);
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+    margin-right: 45px;
+
+    @include lg-down {
+      margin-right: 0;
+    }
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    height: 50px;
+
+    @include lg-down {
+      margin: 0 12px;
+    }
+
+    @include md-down {
+      margin: 0;
+      border-bottom: 1px solid $text-1;
+    }
+
+    &:last-child {
+      @include md-down {
+        border-bottom: none;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: $text-1;
+      transform: scaleX(0);
+      transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+      @include md-down {
+        height: 2px;
+      }
+    }
+
+    &:hover::after,
+    &.active::after {
+      transform: scaleX(1);
+
+      @include md-down {
+        transform: scale(0);
+      }
+    }
+
+    .nav-link {
+      text-decoration: none;
+      @include typography(16, 25, 300);
+      color: $text-1;
+    }
+  }
+
+  /* sign in */
+  .auth-user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    order: 2;
+
+    @include md-down {
+      position: absolute;
+      right: 40px;
+      top: 15px;
+      min-width: auto;
+    }
+
+    .user-icon {
+      cursor: pointer;
+      background: url("../../assets/images/user-circle.svg") center no-repeat;
+      background-size: 100%;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+
+      @include md-down {
+        margin-right: 0;
+      }
+    }
+
+    .nav-item {
+      margin: 0;
+
+      &::after {
+        display: none;
+      }
+
+      .nav-link {
+        font-weight: 200;
+        padding: 0;
+      }
+    }
+  }
+
+  /* toggle */
+  .navbar-toggle {
+    order: 3;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+
+    @include md-down {
+      position: absolute;
+      top: 15px;
+      right: 0;
+    }
+
+    span {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $text-1;
+      border-radius: 1px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 2px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 9px;
+      }
+
+      &:nth-child(4) {
+        top: 16px;
+      }
+
+    }
+
+    &.open {
+      span {
+        &:nth-child(1) {
+          top: 9px;
+          width: 0%;
+          left: 50%;
+        }
+
+        &:nth-child(2) {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+
+        &:nth-child(4) {
+          top: 9px;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+  }
+}

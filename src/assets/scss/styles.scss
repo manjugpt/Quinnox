@@ -1,0 +1,37 @@
+/* Importing Bootstrap SCSS file. */
+
+@import '~bootstrap/scss/bootstrap';
+
+@import './partials/variables';
+@import './partials/mixins';
+@import './partials/base';
+@import './partials/responsiveness';
+
+.schedule-demo-btn {
+  @include typography(18, 27, 300);
+  display: flex;
+  align-items: center;
+  background: $text-1 url("../images/calendar-event.svg") 15px center no-repeat;
+  background-size: 20px;
+  outline: 8px solid $dark;
+  margin: 10px;
+  padding: 8px 15px 8px 45px;
+  color: $primary;
+
+  &:hover {
+    color: $primary-hover;
+  }
+
+  @include sm-down {
+    margin: auto;
+  }
+}
+
+.lazy-section {
+  transition: transform 1s, opacity 1s;
+}
+
+.lazy-section-hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}

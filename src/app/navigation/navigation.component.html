@@ -1,0 +1,49 @@
+<header class="fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <span class="brand-logo">
+        <img src="../../assets/images/logo.png" alt="Awesome logo" />
+      </span>
+
+      <!-- User Navigation -->
+      <span class="auth-user">
+        <span class="user-icon"></span>
+        <li class="nav-item d-none d-lg-flex">
+          <a href="#" class="nav-link">Sign in</a>
+        </li>
+      </span>
+
+      <!-- Toggle Button -->
+      <button class="navbar-toggle d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main Navigation for Mobile & Desktop-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" routerLink="/">Platform</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/solution">Solutions</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/integration">Integrations</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/company">Company</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/blog">Blog</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/support">Support</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

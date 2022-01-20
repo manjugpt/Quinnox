@@ -1,0 +1,11 @@
+$browser-context: 16;
+
+@function toRem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+@mixin typography($fontSize, $lineHeight, $fontWeight) {
+  font-size: toRem($fontSize);
+  line-height: toRem($lineHeight);
+  font-weight: $fontWeight;
+}
