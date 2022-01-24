@@ -8,6 +8,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HeroComponent } from './hero/hero.component';
 import { GetStartedComponent } from './get-started/get-started.component';
 import { FooterComponent } from './footer/footer.component';
+import { SignInModalComponent } from './sign-in-modal/sign-in-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,10 +20,12 @@ import { FooterComponent } from './footer/footer.component';
     GetStartedComponent,
     FooterComponent,
     routingComponent,
+    SignInModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [],

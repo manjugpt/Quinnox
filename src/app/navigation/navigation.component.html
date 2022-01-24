@@ -7,9 +7,9 @@
 
       <!-- User Navigation -->
       <span class="auth-user">
-        <span class="user-icon"></span>
+        <span class="user-icon" data-toggle="modal" data-target="#signInModal"></span>
         <li class="nav-item d-none d-lg-flex">
-          <a href="#" class="nav-link">Sign in</a>
+          <a href="#" class="nav-link" data-toggle="modal" data-target="#signInModal">Sign in</a>
         </li>
       </span>
 
@@ -47,3 +47,4 @@
     </nav>
   </div>
 </header>
+<app-sign-in-modal></app-sign-in-modal>
